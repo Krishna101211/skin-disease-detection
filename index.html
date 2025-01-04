@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Disease Detection</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul class="navbar">
+            <li><a href="#" id="homeBtn">Home</a></li>
+            <li><a href="#" id="historyBtn">History</a></li>
+            <li><a href="#" id="loginBtn">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Login Pop-up -->
+    <div id="loginPage" class="popup">
+        <button class="close-btn">&times;</button>
+        <h2>Login</h2>
+        <label for="userEmail">Email:</label>
+        <input type="email" id="userEmail" placeholder="Enter email">
+        <label for="userPassword">Password:</label>
+        <input type="password" id="userPassword" placeholder="Enter password">
+        <button id="loginSubmit">Login</button>
+        <p>Don't have an account? <a href="#" id="signupLink">Sign up</a></p>
+    </div>
+
+    <!-- Signup Type Selection Pop-up -->
+    <div id="signupTypePage" class="popup">
+        <button class="close-btn">&times;</button>
+        <h2>Choose Account Type</h2>
+        <div class="user-type-selection">
+            <button id="patientSignup" class="type-btn">Patient</button>
+            <button id="doctorSignup" class="type-btn">Doctor</button>
+        </div>
+    </div>
+
+    <!-- Signup Form Pop-up -->
+    <div id="signupPage" class="popup">
+        <button class="close-btn">&times;</button>
+        <h2>Sign Up as <span id="userType"></span></h2>
+        <label for="signupUsername">Username:</label>
+        <input type="text" id="signupUsername" placeholder="Enter username">
+        <label for="signupEmail">Email:</label>
+        <input type="email" id="signupEmail" placeholder="Enter email">
+        <label for="signupPassword">Password:</label>
+        <input type="password" id="signupPassword" placeholder="Enter password">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" placeholder="Confirm password">
+        <button id="signupSubmit">Sign Up</button>
+        <p>Already have an account? <a href="#" id="loginLink">Login</a></p>
+    </div>
+
+    <!-- History Pop-up -->
+    <div id="historySection" class="popup">
+        <button class="close-btn">&times;</button>
+        <h2>History</h2>
+        <div id="historyImages"></div>
+    </div>
+
+    <h1>Skin Disease Detection and Classification</h1>
+
+    <div class="container">
+        <!-- Camera Permission Message -->
+        <div id="cameraPermission" class="permission-message" style="display: none;">
+            <p>⚠️ Camera access is required for this feature.</p>
+            <button id="requestPermission">Allow Camera Access</button>
+        </div>
+
+        <img id="selectedImage" src="" alt="Selected Image" style="display: none;">
+        <video id="video" width="400" height="300" autoplay style="display: none;"></video>
+        <canvas id="canvas" width="400" height="300" style="display: none;"></canvas>
+        
+        <div class="button-row">
+            <input type="file" id="imageUpload" accept="image/*" onchange="displaySelectedImage(event)">
+            <label id="customFileUpload" for="imageUpload">Choose File</label>
+            <button id="captureBtn" onclick="captureImage()">Capture Image</button>
+            <button id="uploadBtn" onclick="uploadImage()">Upload Image</button>
+            <button id="resubmitBtn" onclick="resubmit()">Resubmission</button>
+        </div>
+    </div>
+
+    <div id="result"></div>
+
+    <script src="C:\Users\prath\OneDrive\Desktop\skin\Skin2\script.js"></script>
+</body>
+</html>
